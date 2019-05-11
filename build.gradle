@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+subprojects { Project subproject ->
+    apply plugin: "java"
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}

@@ -1,0 +1,4 @@
+rootProject.name = 'micronaut-annproc-issue'
+
+include 'issue'
+include 'processor'
