@@ -46,14 +46,24 @@ public class Processor extends AbstractProcessor {
                     throw new IllegalStateException("Unknown builder for output " + outputDir);
             }
         
-            final JavaFileObject newSourceFile = processingEnv
+            final JavaFileObject gen = processingEnv
                 .getFiler()
                 .createSourceFile("gen." + name + "Gen");
-            try (final Writer w = newSourceFile.openWriter()) {
+            try (final Writer w = gen.openWriter()) {
                 w.write(
                     "package gen;\n\n"
                 );
                 w.write("public interface " + name + "Gen {}");
+            }
+
+            final JavaFileObject issue = processingEnv
+                .getFiler()
+                .createSourceFile("issue." + name + "Issue");
+            try (final Writer w = issue.openWriter()) {
+                w.write(
+                    "package issue;\n\n"
+                );
+                w.write("public interface " + name + "Issue {}");
             }
         } catch (final IOException e) {
             throw new IllegalStateException(e);
