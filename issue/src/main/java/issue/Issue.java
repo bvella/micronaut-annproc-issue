@@ -1,6 +1,5 @@
 package issue;
 
-import io.micronaut.context.annotation.Factory;
 import javax.inject.Singleton;
 
 @Singleton

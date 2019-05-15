@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 @MicronautTest
 public class IssueTest {
     
-    @Inject Issue issue;
+    @Inject public Issue issue;
     
     @Test
     public void test() {
